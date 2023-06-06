@@ -19,14 +19,21 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
-    @IBAction func loginButtonTapped() {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userNameForWelcome = userNameTF.text ?? ""
     }
     
+    @IBAction func loginButtonTapped() {
+        guard userNameTF.text == userName && passwordTF.text == password else {
+            showAlert(whith: "Oops! 😳", and: "Incorrect username or password")
+            return
+        }
+    }
     @IBAction func forgotUserNameTapped() {
         showAlert(whith: "Oops! 😳", and: "Your User name is: \(userName) ")
     }
-    
     @IBAction func forgotPasswordTapped() {
         showAlert(whith: "Oops! 😳", and: "Your password is: \(password)")
     }
