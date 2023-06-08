@@ -39,7 +39,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="KR6-BU-YbH"/>
-                                    <segue destination="1pl-Qd-Nhf" kind="presentation" id="dll-xW-DNh"/>
+                                    <segue destination="1pl-Qd-Nhf" kind="presentation" modalPresentationStyle="fullScreen" id="dll-xW-DNh"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-6k-Gtw">
@@ -92,29 +92,29 @@
             <objects>
                 <viewController id="1pl-Qd-Nhf" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Wk-HZ-ZU8">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ2-gN-EpI">
-                                <rect key="frame" x="174" y="367.66666666666669" width="45" height="48"/>
+                                <rect key="frame" x="174" y="402" width="45" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLL-0v-jb3">
-                                <rect key="frame" x="122.66666666666669" y="281.66666666666669" width="148" height="36"/>
+                                <rect key="frame" x="122.66666666666669" y="316" width="148" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUl-0c-uo0">
-                                <rect key="frame" x="136.33333333333334" y="695" width="120.66666666666666" height="48"/>
+                                <rect key="frame" x="136.33333333333334" y="730" width="120.66666666666666" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logOutButtonTapped" destination="1pl-Qd-Nhf" eventType="touchUpInside" id="EK5-JH-6Eh"/>
+                                    <segue destination="NO6-qE-cR6" kind="unwind" unwindAction="unwindFor:" id="KHT-qg-PF5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,6 +134,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-RM-DTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="NO6-qE-cR6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="746" y="-27"/>
         </scene>
