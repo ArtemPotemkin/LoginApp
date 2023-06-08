@@ -39,7 +39,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="KR6-BU-YbH"/>
-                                    <segue destination="1pl-Qd-Nhf" kind="presentation" modalPresentationStyle="fullScreen" id="dll-xW-DNh"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-6k-Gtw">
@@ -81,6 +80,7 @@
                     <connections>
                         <outlet property="passwordTF" destination="5VB-AQ-4Jz" id="4VO-98-I5w"/>
                         <outlet property="userNameTF" destination="q4L-Yi-qhn" id="Nmw-cr-rfa"/>
+                        <segue destination="1pl-Qd-Nhf" kind="presentation" identifier="openWelcomeVC" modalPresentationStyle="fullScreen" id="L0D-Bp-vuE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

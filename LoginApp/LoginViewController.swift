@@ -28,11 +28,11 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func loginButtonTapped() {
-        guard userNameTF.text == userName && passwordTF.text == password else {
-            showAlert(whith: "Oops! 😳", and: "Incorrect username or password")
-            passwordTF.text = ""
+        guard userNameTF.text == userName, passwordTF.text == password else {
+            showAlert(whith: "Oops! 😳", and: "Incorrect username or password", textField: passwordTF)
             return
         }
+        performSegue(withIdentifier: "openWelcomeVC", sender: nil)
     }
     @IBAction func forgotUserNameTapped() {
         showAlert(whith: "Oops! 😳", and: "Your User name is: \(userName) ")
@@ -49,9 +49,11 @@ class LoginViewController: UIViewController {
 
 // MARK: - UIAlertController
 extension LoginViewController {
-    private func showAlert(whith title: String, and message: String) {
+    private func showAlert(whith title: String, and message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Okay", style: .default)
+        let okAction = UIAlertAction(title: "Okay", style: .default) { _ in
+            textField?.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
