@@ -137,12 +137,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qlf-RM-DTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="NO6-qE-cR6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="514" y="705"/>
+            <point key="canvasLocation" x="524" y="711"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--User Bio View Controller-->
+        <scene sceneID="iZi-EA-5a2">
+            <objects>
+                <viewController id="6bG-o9-eIh" customClass="UserBioViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oRD-qQ-tlD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0qU-Z8-9L7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gPb-Nh-FFu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFC-py-Nxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="711"/>
+        </scene>
+        <!--Tab Bar View Controller-->
         <scene sceneID="Uha-gX-9vv">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CPE-0U-lkT" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CPE-0U-lkT" customClass="TabBarViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oz2-HA-mFt">
                         <autoresizingMask key="autoresizingMask"/>
@@ -150,15 +166,39 @@
                     </tabBar>
                     <connections>
                         <segue destination="1pl-Qd-Nhf" kind="relationship" relationship="viewControllers" id="iBT-kW-ABX"/>
+                        <segue destination="rPn-Np-pKr" kind="relationship" relationship="viewControllers" id="ejs-1c-f0W"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlR-CB-ctT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="745.80152671755718" y="-27.464788732394368"/>
         </scene>
+        <!--User Bio-->
+        <scene sceneID="5FL-pi-tyN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rPn-Np-pKr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User Bio" image="person.fill" catalog="system" id="2f7-0y-4ab"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7lO-TF-Edb">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6bG-o9-eIh" kind="relationship" relationship="rootViewController" id="VIu-Zn-RtI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVs-kT-qfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223.6641221374045" y="710.56338028169023"/>
+        </scene>
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

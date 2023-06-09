@@ -27,6 +27,10 @@ class LoginViewController: UIViewController {
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.userNameForWelcome = user.userName
+            } else if let navigationController = viewController as? UINavigationController {
+                guard let userBioVC = navigationController.topViewController as? UserBioViewController else { return }
+                userBioVC.title = user.person.fullName
+                userBioVC.view.backgroundColor = .systemMint
             }
         }
         //welcomeVC.userNameForWelcome = user.userName
