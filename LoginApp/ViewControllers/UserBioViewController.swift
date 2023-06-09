@@ -9,6 +9,7 @@ import UIKit
 
 class UserBioViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var userSurnameLabel: UILabel!
     @IBOutlet var userYearOfBirdLabel: UILabel!
