@@ -33,10 +33,6 @@ final class WelcomeViewController: UIViewController {
 
     }
     
-    @IBAction func logOutButtonTapped() {
-        dismiss(animated: true)
-    }
-    
 }
 
 // MARK: - Set Background color

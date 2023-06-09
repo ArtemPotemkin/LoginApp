@@ -17,6 +17,7 @@
 		D054F76E2A2F4FBC00E6B511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054F76C2A2F4FBC00E6B511 /* Main.storyboard */; };
 		D054F7702A2F4FBC00E6B511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D054F76F2A2F4FBC00E6B511 /* Assets.xcassets */; };
 		D054F7732A2F4FBC00E6B511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054F7712A2F4FBC00E6B511 /* LaunchScreen.storyboard */; };
+		D07E47492A337A2B0061AA31 /* BioDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E47482A337A2B0061AA31 /* BioDescriptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D054F76F2A2F4FBC00E6B511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D054F7722A2F4FBC00E6B511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D054F7742A2F4FBC00E6B511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D07E47482A337A2B0061AA31 /* BioDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioDescriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				D04EC5632A2F8E5C0028AEE0 /* WelcomeViewController.swift */,
 				D01692762A33312600FCA13C /* UserBioViewController.swift */,
 				D01692782A333AAD00FCA13C /* TabBarViewController.swift */,
+				D07E47482A337A2B0061AA31 /* BioDescriptionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				D01692772A33312600FCA13C /* UserBioViewController.swift in Sources */,
 				D054F76B2A2F4FBC00E6B511 /* LoginViewController.swift in Sources */,
+				D07E47492A337A2B0061AA31 /* BioDescriptionViewController.swift in Sources */,
 				D04EC5642A2F8E5C0028AEE0 /* WelcomeViewController.swift in Sources */,
 				D054F7672A2F4FBC00E6B511 /* AppDelegate.swift in Sources */,
 				D01692792A333AAD00FCA13C /* TabBarViewController.swift in Sources */,

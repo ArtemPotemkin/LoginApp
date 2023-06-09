@@ -30,10 +30,14 @@ class LoginViewController: UIViewController {
             } else if let navigationController = viewController as? UINavigationController {
                 guard let userBioVC = navigationController.topViewController as? UserBioViewController else { return }
                 userBioVC.title = user.person.fullName
-                userBioVC.view.backgroundColor = .systemMint
+                userBioVC.userName = user.person.name
+                userBioVC.userSurname = user.person.surname
+                userBioVC.userYearOfBirth = user.person.yearOfBirth
+                userBioVC.userCurrenWork = user.person.currentPlaceOfWork
+                userBioVC.userBio = user.person.bio
             }
         }
-        //welcomeVC.userNameForWelcome = user.userName
+    
 
     }
     
