@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - IBOutlets
     @IBOutlet var userNameTF: UITextField!
@@ -18,6 +18,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         userNameTF.text = user.userName
         passwordTF.text = user.password
+        passwordTF.delegate = self
+    }
+    
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        loginButtonTapped()
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,3 +86,4 @@ extension LoginViewController {
         present(alert, animated: true)
     }
 }
+
