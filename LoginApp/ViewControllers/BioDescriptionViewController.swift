@@ -11,7 +11,7 @@ class BioDescriptionViewController: UIViewController {
     
     @IBOutlet var bioDescriptionLabel: UILabel!
     
-    var bio = ""
+    var user: User!
     
     private let primaryColor = UIColor(
         red: 120/255,
@@ -28,7 +28,8 @@ class BioDescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bioDescriptionLabel.text = bio
+        title = "\(user.person.fullName) Bio"
+        bioDescriptionLabel.text = user.person.bio
         view.addVecticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
 
     }

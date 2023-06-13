@@ -42,6 +42,6 @@ class UserBioViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userBioVC = segue.destination as? BioDescriptionViewController else { return }
-        userBioVC.bio = user.person.bio
+        userBioVC.user = user
     }
 }
