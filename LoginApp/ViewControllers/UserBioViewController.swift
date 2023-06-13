@@ -15,6 +15,12 @@ class UserBioViewController: UIViewController {
     @IBOutlet var userYearOfBirdLabel: UILabel!
     @IBOutlet var userCurrentWorkLabel: UILabel!
     
+    @IBOutlet var photoImage: UIImageView! {
+        didSet {
+            photoImage.layer.cornerRadius = photoImage.frame.height / 2
+        }
+    }
+    
     var user: User!
     
     private let primaryColor = UIColor(
@@ -37,7 +43,7 @@ class UserBioViewController: UIViewController {
         userSurnameLabel.text = user.person.surname
         userYearOfBirdLabel.text = user.person.yearOfBirth
         userCurrentWorkLabel.text = user.person.currentPlaceOfWork
-    
+        photoImage.image = UIImage(named: user.person.photo)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
