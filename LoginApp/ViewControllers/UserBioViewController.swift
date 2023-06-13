@@ -15,11 +15,7 @@ class UserBioViewController: UIViewController {
     @IBOutlet var userYearOfBirdLabel: UILabel!
     @IBOutlet var userCurrentWorkLabel: UILabel!
     
-    var userName = "Username"
-    var userSurname = "UserSurname"
-    var userYearOfBirth = "000"
-    var userCurrenWork = "00"
-    var userBio = ""
+    var user: User!
     
     private let primaryColor = UIColor(
         red: 120/255,
@@ -37,15 +33,15 @@ class UserBioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVecticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        userNameLabel.text = userName
-        userSurnameLabel.text = userSurname
-        userYearOfBirdLabel.text = userYearOfBirth
-        userCurrentWorkLabel.text = userCurrenWork
+        userNameLabel.text = user.person.name
+        userSurnameLabel.text = user.person.surname
+        userYearOfBirdLabel.text = user.person.yearOfBirth
+        userCurrentWorkLabel.text = user.person.currentPlaceOfWork
     
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userBioVC = segue.destination as? BioDescriptionViewController else { return }
-        userBioVC.bio = userBio
+        userBioVC.bio = user.person.bio
     }
 }

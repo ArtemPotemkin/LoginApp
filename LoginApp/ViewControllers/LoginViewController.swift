@@ -30,12 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 welcomeVC.userNameForWelcome = user.userName
             } else if let navigationController = viewController as? UINavigationController {
                 guard let userBioVC = navigationController.topViewController as? UserBioViewController else { return }
-                userBioVC.title = user.person.fullName
-                userBioVC.userName = user.person.name
-                userBioVC.userSurname = user.person.surname
-                userBioVC.userYearOfBirth = user.person.yearOfBirth
-                userBioVC.userCurrenWork = user.person.currentPlaceOfWork
-                userBioVC.userBio = user.person.bio
+                userBioVC.user = user
             }
         }
     }
