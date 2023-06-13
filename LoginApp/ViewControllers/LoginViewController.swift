@@ -21,11 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTF.delegate = self
     }
     
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        loginButtonTapped()
-        return true
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
@@ -43,8 +38,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 userBioVC.userBio = user.person.bio
             }
         }
-    
-
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        loginButtonTapped()
+        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
