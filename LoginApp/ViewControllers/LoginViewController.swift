@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userNameForWelcome = user.userName
+                welcomeVC.user = user
             } else if let navigationController = viewController as? UINavigationController {
                 guard let userBioVC = navigationController.topViewController as? UserBioViewController else { return }
                 userBioVC.user = user
@@ -46,9 +46,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBActions
     @IBAction func loginButtonTapped() {
-        guard userNameTF.text == user.userName
-, passwordTF.text == user.password else {
-            showAlert(whith: "Oops! 😳", and: "Incorrect username or password", textField: passwordTF)
+        guard userNameTF.text == user.userName,
+                passwordTF.text == user.password else {
+            showAlert(
+                title: "Oops! 😳",
+                message: "Incorrect username or password",
+                textField: passwordTF)
             return
         }
         performSegue(withIdentifier: "openWelcomeVC", sender: nil)
@@ -56,8 +59,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(whith: "Oops! 😳", and: "Your user name is: \(user.userName)")
-        : showAlert(whith: "Oops! 😳", and: "Your password is: \(user.password)")
+        ? showAlert(title: "Oops! 😳", message: "Your user name is: \(user.userName)")
+        : showAlert(title: "Oops! 😳", message: "Your password is: \(user.password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -69,7 +72,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: - UIAlertController
 extension LoginViewController {
-    private func showAlert(whith title: String, and message: String, textField: UITextField? = nil) {
+    private func showAlert(title: String,message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Okay", style: .default) { _ in
             textField?.text = ""
